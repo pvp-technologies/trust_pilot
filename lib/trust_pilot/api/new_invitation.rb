@@ -2,25 +2,22 @@ require 'singleton'
 module TrustPilot
   class NewInvitation
 
-    extend SetterHelper
     include HTTParty
 
-    class Default; end
-
-    default_methods [:businessUserId, 
-                     :templateId,
-                     :locale,
-                     :senderEmail,
-                     :senderName,
-                     :replyTo,
-                     :redirectUri], Default
+    mattr_accessor :businessUserId, 
+      :templateId,
+      :locale,
+      :senderEmail,
+      :senderName,
+      :replyTo,
+      :redirectUri
 
     base_uri "https://api.trustpilot.com/v1/private/business-units/"
 
     def self.call(recipient_email: recipient_email, recipient_name: recipient_name, tags: tags, reference_id: reference_id, preferred_send_time: preferred_send_time)
-      p endpoint = "#{businessUserId}/invitations"
-      p query = {token: Token.get}
-      p body = {
+      endpoint = "#{businessUserId}/invitations"
+      query = {token: Token.get}
+      body = {
         "businessUserId" => businessUserId,
         "recipientEmail" => recipient_email,
         "recipientName" => recipient_name,
