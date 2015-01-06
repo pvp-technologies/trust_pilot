@@ -14,7 +14,7 @@ module TrustPilot
 
     base_uri "https://api.trustpilot.com/v1/private/business-units/"
 
-    def self.call(recipient_email: recipient_email, recipient_name: recipient_name, tags: tags, reference_id: reference_id, preferred_send_time: preferred_send_time)
+    def self.call(recipient_email: "", recipient_name: "", tags: [], reference_id: "", preferred_send_time: "")
       endpoint = "#{businessUserId}/invitations"
       query = {token: Token.get}
       body = {
