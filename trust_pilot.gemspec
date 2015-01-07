@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["denis.pasin@koolicar.com"]
   spec.summary       = %q{Gem to access Trust Pilot API.}
   spec.description   = %q{Gem to access Trust Pilot API.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Skizzk/trust_pilot"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
