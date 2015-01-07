@@ -7,6 +7,8 @@ module TrustPilot
     include Singleton
     include HTTParty
 
+    class NoTokenException < StandardError; end
+
     base_uri "https://api.trustpilot.com/v1/oauth/oauth-business-users-for-applications"
     attr_reader :validity
 
@@ -20,12 +22,25 @@ module TrustPilot
 
     def get
       new_token unless validity >= Time.now
-      @token 
+      @token || raise(NoTokenException)
     end
 
     private
 
+    def check_default
+      unless TrustPilot.username && TrustPilot.password && TrustPilot.key && TrustPilot.secret
+        raise MissingDefault
+      end
+    end
+
     def new_token
+      check_default
+      response = do_call
+      @token = response.parsed_response["access_token"]
+      @validity = 5.minutes.from_now
+    end
+
+    def do_call
       endpoint = '/accesstoken'
       params = {
         grant_type: 'password',
@@ -36,9 +51,7 @@ module TrustPilot
         'Authorization' => "Basic #{encoded_key}",
         'Content-Type' => 'application/x-www-form-urlencoded'
       }
-      response = self.class.post(endpoint, {headers: headers, body: params})
-      @token = response.parsed_response["access_token"]
-      @validity = 5.minutes.from_now
+      self.class.post(endpoint, {headers: headers, body: params})
     end
 
     def encoded_key

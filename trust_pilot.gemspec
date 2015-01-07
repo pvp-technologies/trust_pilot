@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "trust_pilot"
   spec.version       = TrustPilot::VERSION
   spec.authors       = ["Zaratan"]
-  spec.email         = ["denis.pasin@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["denis.pasin@koolicar.com"]
+  spec.summary       = %q{Gem to access Trust Pilot API.}
+  spec.description   = %q{Gem to access Trust Pilot API.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'httparty'
   spec.add_dependency 'activesupport'
+  spec.add_dependency 'recursive-open-struct'
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"

@@ -1,6 +1,6 @@
 # TrustPilot
 
-TODO: Write a gem description
+A gem to access Trust Pilot API.
 
 ## Installation
 
@@ -20,7 +20,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You must set the credentials once:
+```ruby
+TrustPilot.username = 'test@email.com'
+TrustPilot.password = 'qwerty'
+TrustPilot.key = 'ghfastnsdhvtyew'
+TrustPilot.secret = 'qwertyui'
+```
+
+### New invitation
+
+You must set default options once:
+```ruby
+TrustPilot::NewInvitation.business_user_id = 'sdjkjkdfhguygasdy'
+TrustPilot::NewInvitation.template_id = 'sddsnfsdoub'
+TrustPilot::NewInvitation.locale = 'en-US'
+TrustPilot::NewInvitation.sender_email = 'blu@yopmail.com'
+TrustPilot::NewInvitation.sender_name = 'blu@yopmail.com'
+TrustPilot::NewInvitation.redirect_uri = 'http://trustpilot.com'
+TrustPilot::NewInvitation.reply_to = 'blu@yopmail.com'
+```
+
+Then call TrustPilot this way:
+```ruby
+TrustPilot::NewInvitation.call(recipient_email: 'blu2@yopmail.com', recipient_name: 'charles', tags: 'owner', reference_id: 'dfhsgefhjgfeykefwgs', preferred_send_time: '2015-01-07T11:00:00'
+```
 
 ## Contributing
 
