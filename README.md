@@ -43,7 +43,12 @@ TrustPilot::NewInvitation.reply_to = 'blu@yopmail.com'
 
 Then call TrustPilot this way:
 ```ruby
-TrustPilot::NewInvitation.call(recipient_email: 'blu2@yopmail.com', recipient_name: 'charles', tags: 'owner', reference_id: 'dfhsgefhjgfeykefwgs', preferred_send_time: '2015-01-07T11:00:00'
+TrustPilot::NewInvitation.call(
+  recipient_email: 'blu2@yopmail.com', 
+  recipient_name: 'charles', 
+  tags: ['owner'], 
+  reference_id: 'dfhsgefhjgfeykefwgs', 
+  preferred_send_time: '2015-01-07T11:00:00'
 ```
 
 ## Contributing
