@@ -49,6 +49,7 @@ TrustPilot::NewInvitation.call(
   tags: ['owner'], 
   reference_id: 'dfhsgefhjgfeykefwgs', 
   preferred_send_time: '2015-01-07T11:00:00'
+)
 ```
 
 ## Contributing
