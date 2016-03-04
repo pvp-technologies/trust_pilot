@@ -75,14 +75,14 @@ TrustPilot::NewProductInvitation.call(
         imageUrl: 'http://ecx.images-amazon.com/images/I/51geK1idtuL._SX200_QL80_.jpg'
         name: 'Point Break DVD',
         sku: 'SKU-123', 
-        gtin: 'GTIN', ## Must be valid
+        gtin: 'GTIN', ## Optional - Must be valid ( https://en.wikipedia.org/wiki/Global_Trade_Item_Number )
         mpn: 'MPN-456',
         brand: 'Some Brand Name'
       }
     ]
   )
 
-Returns a link that sets up a Product Review.
+ ## Returns a link that sets up a Product Review.
 ```
 
 
