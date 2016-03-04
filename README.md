@@ -86,8 +86,15 @@ TrustPilot::NewProductInvitation.call(
       }
     ]
   )
+```
 
- ## Returns a link that sets up a Product Review.
+#### Returns a link that sets up a Product Review.
+
+```ruby
+  {
+  "reviewLinkId": "i9tafKx7abY",
+  "reviewUrl": "https://products.trustpilot.com/evaluate/i377afKxa7abY"
+  }
 ```
 
 
