@@ -30,7 +30,7 @@ TrustPilot.key = 'ghfastnsdhvtyew'
 TrustPilot.secret = 'qwertyui'
 ```
 
-### New invitation
+### Set Defaults
 
 You must set default options once:
 ```ruby
@@ -43,6 +43,8 @@ TrustPilot::NewInvitation.redirect_uri = 'http://trustpilot.com'
 TrustPilot::NewInvitation.reply_to = 'blu@yopmail.com'
 ```
 
+### Send Invitation
+
 Then call TrustPilot this way:
 ```ruby
 TrustPilot::NewInvitation.call(
@@ -53,6 +55,28 @@ TrustPilot::NewInvitation.call(
   preferred_send_time: '2015-01-07T11:00:00'
 )
 ```
+
+### Get Product Review Invitation Link
+
+```ruby
+TrustPilot::NewProductInvitation.call(
+    consumer: { name: "Jonny Utah", email: utah@fbi.gov.us },
+    reference_id: 'abc123',
+    products: [
+    { productUrl: 'http://www.amazon.com/Point-Break-Patrick-Swayze/dp/B00AOQ8MOQ',
+        imageUrl: 'http://ecx.images-amazon.com/images/I/51geK1idtuL._SX200_QL80_.jpg'
+        name: 'Point Break DVD',
+        sku: 'SKU-123', 
+        gtin: 'GTIN', ## Must be valid
+        mpn: 'MPN-456',
+        brand: 'Some Brand Name'
+      }
+    ]
+  )
+
+Returns a link that sets up a Product Review.
+```
+
 
 ## Contributing
 

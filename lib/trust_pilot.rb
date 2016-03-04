@@ -5,6 +5,7 @@ require 'httparty'
 require_relative "trust_pilot/version"
 require_relative "trust_pilot/api/token"
 require_relative "trust_pilot/api/new_invitation"
+require_relative "trust_pilot/api/new_product_invitation"
 
 module TrustPilot
   class MissingDefault < StandardError; end
