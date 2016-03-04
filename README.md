@@ -30,16 +30,16 @@ TrustPilot.key = 'ghfastnsdhvtyew'
 TrustPilot.secret = 'qwertyui'
 ```
 
-### Set Defaults
+### Set Invite Credentials
 
 You must set default options once:
 ```ruby
 TrustPilot::NewInvitation.business_user_id = 'sdjkjkdfhguygasdy'
-TrustPilot::NewInvitation.template_id = 'sddsnfsdoub'
 TrustPilot::NewInvitation.locale = 'en-US'
+TrustPilot::NewInvitation.redirect_uri = 'http://trustpilot.com'
+TrustPilot::NewInvitation.template_id = 'sddsnfsdoub'
 TrustPilot::NewInvitation.sender_email = 'blu@yopmail.com'
 TrustPilot::NewInvitation.sender_name = 'blu@yopmail.com'
-TrustPilot::NewInvitation.redirect_uri = 'http://trustpilot.com'
 TrustPilot::NewInvitation.reply_to = 'blu@yopmail.com'
 ```
 
@@ -54,6 +54,14 @@ TrustPilot::NewInvitation.call(
   reference_id: 'dfhsgefhjgfeykefwgs', 
   preferred_send_time: '2015-01-07T11:00:00'
 )
+```
+### Set Product Review Invitation Credentials
+
+You must set default options once:
+```ruby
+TrustPilot::NewProductInvitation.business_user_id = 'sdjkjkdfhguygasdy'
+TrustPilot::NewProductInvitation.locale = 'en-US'
+TrustPilot::NewProductInvitation.redirect_uri = 'http://trustpilot.com'
 ```
 
 ### Get Product Review Invitation Link
