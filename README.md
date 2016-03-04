@@ -30,9 +30,9 @@ TrustPilot.key = 'ghfastnsdhvtyew'
 TrustPilot.secret = 'qwertyui'
 ```
 
-### Service Review Invitation 
+## Service Review Invitation 
 
-#### Set Invite Credentials
+### Set Invite Credentials
 
 You must set default options once:
 ```ruby
@@ -45,7 +45,7 @@ TrustPilot::NewInvitation.sender_name = 'blu@yopmail.com'
 TrustPilot::NewInvitation.reply_to = 'blu@yopmail.com'
 ```
 
-#### Send Invitation
+### Send Invitation
 
 Then call TrustPilot this way:
 ```ruby
@@ -58,11 +58,11 @@ TrustPilot::NewInvitation.call(
 )
 ```
 
-### Generate Product Review Invitation Link
+## Generate Product Review Invitation Link
 
 https://developers.trustpilot.com/product-reviews-api
 
-#### Set Product Review Invitation Credentials
+### Set Product Review Invitation Credentials
 
 You must set default options once:
 ```ruby
@@ -71,7 +71,7 @@ TrustPilot::NewProductInvitation.locale = 'en-US'
 TrustPilot::NewProductInvitation.redirect_uri = 'http://trustpilot.com'
 ```
 
-#### Get Product Review Invitation Link
+### Get Product Review Invitation Link
 
 ```ruby
 TrustPilot::NewProductInvitation.call(
@@ -90,7 +90,7 @@ TrustPilot::NewProductInvitation.call(
   )
 ```
 
-#### Returns a link that sets up a Product Review.
+#### Returns a link that sets up a Product Review
 
 ```ruby
   {
