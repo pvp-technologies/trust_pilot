@@ -60,6 +60,8 @@ TrustPilot::NewInvitation.call(
 
 ### Generate Product Review Invitation Link
 
+https://developers.trustpilot.com/product-reviews-api
+
 #### Set Product Review Invitation Credentials
 
 You must set default options once:
@@ -76,7 +78,7 @@ TrustPilot::NewProductInvitation.call(
     consumer: { name: "Jonny Utah", email: utah@fbi.gov.us },
     reference_id: 'abc123',
     products: [
-    { productUrl: 'http://www.amazon.com/Point-Break-Patrick-Swayze/dp/B00AOQ8MOQ',
+      { productUrl: 'http://www.amazon.com/Point-Break-Patrick-Swayze/dp/B00AOQ8MOQ',
         imageUrl: 'http://ecx.images-amazon.com/images/I/51geK1idtuL._SX200_QL80_.jpg'
         name: 'Point Break DVD',
         sku: 'SKU-123', 
