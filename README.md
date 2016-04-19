@@ -56,7 +56,7 @@ TrustPilot::NewInvitation.call(
 
 ## Contributing
 
-1. Fork it ( https://github.com/Skizzk/trust_pilot/fork )
+1. Fork it ( https://github.com/pvp-technologies/trust_pilot/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
