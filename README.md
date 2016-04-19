@@ -30,18 +30,22 @@ TrustPilot.key = 'ghfastnsdhvtyew'
 TrustPilot.secret = 'qwertyui'
 ```
 
-### New invitation
+## Service Review Invitation 
+
+### Set Invite Credentials
 
 You must set default options once:
 ```ruby
 TrustPilot::NewInvitation.business_user_id = 'sdjkjkdfhguygasdy'
-TrustPilot::NewInvitation.template_id = 'sddsnfsdoub'
 TrustPilot::NewInvitation.locale = 'en-US'
+TrustPilot::NewInvitation.redirect_uri = 'http://trustpilot.com'
+TrustPilot::NewInvitation.template_id = 'sddsnfsdoub'
 TrustPilot::NewInvitation.sender_email = 'blu@yopmail.com'
 TrustPilot::NewInvitation.sender_name = 'blu@yopmail.com'
-TrustPilot::NewInvitation.redirect_uri = 'http://trustpilot.com'
 TrustPilot::NewInvitation.reply_to = 'blu@yopmail.com'
 ```
+
+### Send Invitation
 
 Then call TrustPilot this way:
 ```ruby
@@ -53,6 +57,48 @@ TrustPilot::NewInvitation.call(
   preferred_send_time: '2015-01-07T11:00:00'
 )
 ```
+
+## Generate Product Review Invitation Link
+
+https://developers.trustpilot.com/product-reviews-api
+
+### Set Product Review Invitation Credentials
+
+You must set default options once:
+```ruby
+TrustPilot::NewProductInvitation.business_user_id = 'sdjkjkdfhguygasdy'
+TrustPilot::NewProductInvitation.locale = 'en-US'
+TrustPilot::NewProductInvitation.redirect_uri = 'http://trustpilot.com'
+```
+
+### Get Product Review Invitation Link
+
+```ruby
+TrustPilot::NewProductInvitation.call(
+    consumer: { name: "Jonny Utah", email: utah@fbi.gov.us },
+    reference_id: 'abc123',
+    products: [
+      { productUrl: 'http://www.amazon.com/Point-Break-Patrick-Swayze/dp/B00AOQ8MOQ',
+        imageUrl: 'http://ecx.images-amazon.com/images/I/51geK1idtuL._SX200_QL80_.jpg'
+        name: 'Point Break DVD',
+        sku: 'SKU-123', 
+        gtin: 'GTIN', ## Optional - Must be valid ( https://en.wikipedia.org/wiki/Global_Trade_Item_Number )
+        mpn: 'MPN-456',
+        brand: 'Some Brand Name'
+      }
+    ]
+  )
+```
+
+#### Returns a link that sets up a Product Review
+
+```ruby
+  {
+  "reviewLinkId": "i9tafKx7abY",
+  "reviewUrl": "https://products.trustpilot.com/evaluate/i377afKxa7abY"
+  }
+```
+
 
 ## Contributing
 
